@@ -20,3 +20,9 @@ primary_region = 'sin'
   memory = '8gb'
   cpu_kind = 'shared'
   cpus = 8
+
+[mounts]
+  source = "cache"
+  destination = "/cache"
+  processes = ['app']
+  initial_size = 10
