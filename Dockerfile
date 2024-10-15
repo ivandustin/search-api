@@ -15,4 +15,4 @@ ENV SEARCH_RESULTS=256
 COPY . .
 RUN chmod +x */bin/*
 EXPOSE 8000
-CMD set -x; ./download.sh && ./run.sh
+CMD ./main.sh
