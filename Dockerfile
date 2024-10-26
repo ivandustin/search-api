@@ -4,8 +4,8 @@ RUN apt-get update
 RUN apt-get install -y git
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-RUN git clone https://github.com/ivandustin/scripts.git
-RUN git clone https://github.com/ivandustin/search.git
+RUN git clone https://github.com/ivandustin/scripts.git --branch v0.1.0
+RUN git clone https://github.com/ivandustin/search.git --branch v0.1.0
 ENV PATH=/app/scripts/bin:/app/search/bin:$PATH
 ENV PYTHONPATH=/app/scripts/lib/python
 ENV HF_HOME=/cache/huggingface
