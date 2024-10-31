@@ -1,28 +1,28 @@
-# fly.toml app configuration file generated for search-api-winter-field-7261 on 2024-10-08T01:35:24+08:00
+# fly.toml app configuration file generated for search-api-v2 on 2024-10-31T12:58:21+08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'search-api-winter-field-7261'
+app = 'search-api-v2'
 primary_region = 'sin'
 
 [build]
 
+[[mounts]]
+  source = 'cache'
+  destination = '/cache'
+  initial_size = '20'
+  processes = ['app']
+
 [http_service]
   internal_port = 8000
   force_https = true
-  auto_stop_machines = 'stop'
+  auto_stop_machines = 'suspend'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
 
 [[vm]]
-  memory = '8gb'
+  memory = '2gb'
   cpu_kind = 'shared'
   cpus = 8
-
-[mounts]
-  source = "cache"
-  destination = "/cache"
-  processes = ['app']
-  initial_size = 10
