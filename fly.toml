@@ -1,10 +1,11 @@
-# fly.toml app configuration file generated for search-api-v2 on 2024-10-31T12:58:21+08:00
+# fly.toml app configuration file generated for search-api-v3 on 2024-11-05T22:28:25+08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'search-api-v2'
-primary_region = 'sin'
+app = 'search-api-v3'
+primary_region = 'iad'
+swap_size_mb = 2048
 
 [build]
 
@@ -23,6 +24,6 @@ primary_region = 'sin'
   processes = ['app']
 
 [[vm]]
-  memory = '8gb'
+  memory = '16gb'
   cpu_kind = 'shared'
   cpus = 8
